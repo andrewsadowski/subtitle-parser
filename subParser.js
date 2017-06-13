@@ -1,22 +1,23 @@
 var fs = require('fs');
 var parser = require('subtitles-parser');
 
-var srt = fs.readFileSync('sub.srt','utf8');
+var srt = fs.readFileSync('subCopy.srt','utf8');
 
 var data = parser.fromSrt(srt);
 
 var srtLength = data.length;
 
+//Loops through array of subs, formats it, and prints to console and file//
 
 for (i=0; i < data.length; i++) {
-    // if (i === undefined) {
-    //     break;
-    // }
     var obj = data[i];
-    var output = `${data[i].id} ${data[i].startTime} ---> ${data[i].endTime}  ${data[i].text}\n`;
-    process.stdout.write(output);
+    var output = `${data[i].id} ${data[i].startTime} --> ${data[i].endTime}  ${data[i].text}\n `;
+    
+    var dline = output.replace(/[\r\n]/, '');
+  
+    console.log(dline);
 
-    fs.appendFile("./outputTest.txt", output, (err) => {
+    fs.appendFile("./outputTest.txt", dline, (err) => {
         if(err) {
             return console.log(err);
         }
@@ -35,7 +36,7 @@ console.log(data.length);
 
 
 
-
+// process.stdout.write(dline);
 // var columnParser=require("node-column-parser");
 
 // var util=require('util');
@@ -53,3 +54,4 @@ console.log(data.length);
 // console.log("HEADERS:\n"+util.inspect(options.headers));
 // console.log(`stderr: ${stderr}`);
 // });
+// var dline = output.replace(/(\r\n|\n|\r)/gm, "");
