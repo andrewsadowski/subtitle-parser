@@ -1,7 +1,7 @@
 var fs = require('fs');
 var parser = require('subtitles-parser');
 
-var srt = fs.readFileSync('subCopy.srt','utf8');
+var srt = fs.readFileSync('sub.srt','utf8');
 
 var data = parser.fromSrt(srt);
 
