@@ -1,4 +1,7 @@
 node_modules/
+sub.srt
+old subs/
+outputCSV.csv
 subTest.js
 outputTest.txt
 subCopy.srt
