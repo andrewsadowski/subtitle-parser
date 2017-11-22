@@ -1,5 +1,5 @@
-var fs = require('fs');
-var parser = require('subtitles-parser');
+const fs = require('fs');
+const parser = require('subtitles-parser');
 
 var srt = fs.readFileSync('SC-Module3-Chunk12_Data_Progression-Updated.srt', 'utf8');
 
