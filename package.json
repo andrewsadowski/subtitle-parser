@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mocha": "^4.0.1",
     "subtitles-parser": "0.0.2"
   }
 }
