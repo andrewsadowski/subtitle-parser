@@ -1,11 +1,11 @@
 const fs = require('fs');
 const parser = require('subtitles-parser');
 
-var srt = fs.readFileSync('SC-Module3-Chunk12_Data_Progression-Updated.srt', 'utf8');
+let srt = fs.readFileSync('SC-Module3-Chunk12_Data_Progression-Updated.srt', 'utf8');
 
-var data = parser.fromSrt(srt);
+let data = parser.fromSrt(srt);
 
-var srtLength = data.length;
+let srtLength = data.length;
 
 //Loops through array of subs, formats it, and prints to console and file//
 
