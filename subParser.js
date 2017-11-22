@@ -1,7 +1,7 @@
 var fs = require('fs');
 var parser = require('subtitles-parser');
 
-var srt = fs.readFileSync('subCopy.srt','utf8');
+var srt = fs.readFileSync('SC-Module3-Chunk12_Data_Progression-Updated.srt', 'utf8');
 
 var data = parser.fromSrt(srt);
 
@@ -22,20 +22,20 @@ for (i=0; i < data.length; i++) {
     console.log(dline);
 
     fs.appendFile("./outputTest.txt", dline, (err) => {
-        if(err) {
+        if (err) {
             return console.log(err);
         }
         console.log('the file was saved');
     });
+
     fs.appendFile("./outputCSV.csv", dline, (err) => {
-        if(err) {
+        if (err) {
             return console.log(err);
         }
         console.log('the file was saved');
     });
 }
 
-console.log(data.length);
 
 
 
@@ -45,23 +45,3 @@ console.log(data.length);
 
 
 
-
-// process.stdout.write(dline);
-// var columnParser=require("node-column-parser");
-
-// var util=require('util');
-
-// var columns = require('columns').create();
-// const exec = require('child_process').exec;
-// exec('ps u', (error, stdout, stderr) => {
-// if (error) {
-// console.error(`exec error: ${error}`);
-// return;
-// }
-// var options={};
-// var rows=columnParser(stdout, options);
-// console.log("rows.length="+rows.length+"\n"+util.inspect(rows));
-// console.log("HEADERS:\n"+util.inspect(options.headers));
-// console.log(`stderr: ${stderr}`);
-// });
-// var dline = output.replace(/(\r\n|\n|\r)/gm, "");
