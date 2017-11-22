@@ -12,6 +12,7 @@
   "dependencies": {
     "expect": "^21.2.1",
     "mocha": "^4.0.1",
-    "subtitles-parser": "0.0.2"
+    "subtitles-parser": "0.0.2",
+    "yargs": "^10.0.3"
   }
 }
