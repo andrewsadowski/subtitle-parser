@@ -3,6 +3,7 @@ const parser = require('subtitles-parser');
 
 let srt = fs.readFileSync('SC-Module3-Chunk12_Data_Progression-Updated.srt', 'utf8');
 
+//Stores contents of subtitle file to array//
 let data = parser.fromSrt(srt);
 
 let srtLength = data.length;
@@ -10,13 +11,10 @@ let srtLength = data.length;
 //Loops through array of subs, formats it, and prints to console and file//
 
 for (i=0; i < data.length; i++) {
-    var obj = data[i];
-    var output = `${data[i].id}; ;${data[i].startTime} --> ${data[i].endTime}; ;${data[i].text}\n`;
-    
-    // var dline = output.replace(/(\r\n|\n|)/, " ");
+    let output = `${data[i].id}; ;${data[i].startTime} --> ${data[i].endTime}; ;${data[i].text}\n`;
 
-    var dline = output.replace(/([^0-9])\n([^$\n]*)([^\n])/, '\1 \2\3');
-    var dline = output.replace(/(^\n([0-9]*)\n([^a-z$]*)\n([^$]*)\n)/, '\n\1\t\2\t\3');
+    let dline = output.replace(/([^0-9])\n([^$\n]*)([^\n])/, '\1 \2\3');
+    dline = output.replace(/(^\n([0-9]*)\n([^a-z$]*)\n([^$]*)\n)/, '\n\1\t\2\t\3');
     
   
     console.log(dline);
