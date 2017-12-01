@@ -14,5 +14,4 @@ describe('generateSubCSV Tests', (done) => {
     it('should be of type object', () => {
         expect(typeof parsedData).toBe('object')
     });
-
 });

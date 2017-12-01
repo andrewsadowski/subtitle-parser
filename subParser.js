@@ -27,7 +27,6 @@ const generateSubCSV = () => {
       if (err) {
         return console.log(err);
       }
-    //   console.log("the file was saved");
     });
   }
 };
