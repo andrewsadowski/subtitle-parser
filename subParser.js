@@ -23,13 +23,6 @@ const generateSubCSV = () => {
 
     console.log(dline);
 
-    fs.appendFile("./outputTest.txt", dline, err => {
-      if (err) {
-        return console.log(err);
-      }
-    //   console.log("the file was saved");
-    });
-
     fs.appendFile("./outputCSV.csv", dline, err => {
       if (err) {
         return console.log(err);
