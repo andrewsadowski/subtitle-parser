@@ -6,7 +6,6 @@ const {generateSubCSV} = require('./subParser');
 
 var data = fs.readFileSync('test.srt', 'utf8');
 var parsedData = parser.fromSrt(data);
-// console.log(Object.keys(parsedData).length);
 
 describe('generateSubCSV Tests', (done) => {
     it('should return a matching length of the subtitle file', () => {
@@ -15,4 +14,5 @@ describe('generateSubCSV Tests', (done) => {
     it('should be of type object', () => {
         expect(typeof parsedData).toBe('object')
     });
+
 });
