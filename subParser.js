@@ -1,7 +1,7 @@
 const fs = require("fs");
 const parser = require("subtitles-parser");
 
-let srt = fs.readFileSync("test.srt", "utf8");
+let srt = fs.readFileSync("Ultima-finalSRT.srt", "utf8");
 
 //Stores contents of subtitle file to array//
 let data = parser.fromSrt(srt);
