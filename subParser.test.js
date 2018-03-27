@@ -15,13 +15,14 @@ describe("generateSubCSV Tests", done => {
     expect(typeof parsedData).toBe("object");
   });
   it("parser.fromSrt() should contain valid subtitle objects", function() {
-    for (var i in parsedData) {
-      var s = parsedData[i];
-      console.log(s);
-      expect(s).to.have.property("id");
-      expect(s).to.have.property("startTime");
-      expect(s).to.have.property("endTime");
-      expect(s).to.have.property("text");
+    for (var i of parsedData) {
+      for (var j in parsedData[i]) {
+        var s = parsedData[i][j];
+        expect(s).to.have.property("id");
+        expect(s).to.have.property("startTime");
+        expect(s).to.have.property("endTime");
+        expect(s).to.have.property("text");
+      }
     }
   });
 });
