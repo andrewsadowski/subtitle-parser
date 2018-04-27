@@ -16,13 +16,31 @@ describe("generateSubCSV Tests", done => {
   });
   it("parser.fromSrt() should contain valid subtitle objects", function() {
     for (var i of parsedData) {
+      console.log(parsedData);
       for (var j in parsedData[i]) {
         var s = parsedData[i][j];
+
         expect(s).to.have.property("id");
         expect(s).to.have.property("startTime");
         expect(s).to.have.property("endTime");
         expect(s).to.have.property("text");
       }
     }
+  });
+  xit("all subtitle values should be in order", () => {
+    for (var i of parsedData) {
+      for (var j in parsedData[i]) {
+        var s = parsedData[i][j];
+        expect(s).to.have.value("1");
+        expect(s).to.have.property("startTime");
+        expect(s).to.have.property("endTime");
+        expect(s).to.have.property("text");
+      }
+    }
+
+    // Object.keys(parsedData).forEach(key => {
+    //   console.log(key);
+    //   console.log(parsedData);
+    // });
   });
 });
