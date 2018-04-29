@@ -16,7 +16,7 @@ const generateSubCSV = () => {
     let dline = output.replace(/([^0-9])\n([^$\n]*)([^\n])/, '\1 \2\3');
     dline = output.replace(/(^\n([0-9]*)\n([^a-z$]*)\n([^$]*)\n)/, '\n\1\t\2\t\3');
 
-    console.log(dline);
+    // console.log(dline);
 
     fs.appendFile('./outputCSV.csv', dline, err => {
       if (err) {
@@ -29,7 +29,7 @@ const generateSubCSV = () => {
 const generateSub2TSV = () => {
   data.forEach(sub => {
     let output = `${sub.id}\t${sub.startTime}\t${sub.endTime}\t${sub.text}\n`;
-    console.log(output);
+    // console.log(output);
     fs.appendFile('./outputTSV.tsv', output, err => {
       if (err) return;
     });
