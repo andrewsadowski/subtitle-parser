@@ -1,26 +1,27 @@
 const fs = require('fs');
 
-const writeDataToCSV = function (data, delimiter) {
+const writeDataToCSV = function(data, delimiter) {
+  fs.writeFile(file, data, error => {
+    if (error) {
+      return console.log(error.message);
+    } else {
+      console.log(` Data written to: ${file}`);
+    }
+  });
+};
 
-    fs.writeFile(file, data, (error) => {
+const checkCSVData = function(data) {};
 
-        if (error) {
-            return console.log(error.message);
-        } else {
-            console.log(` Data written to: ${file}`);
-        }
-    });
-}
-
-const checkCSVData = function (data) {
-
-}
-
-
-
+const addDelim = function(data) {
+  let delim = '\t';
+  let delimAddArr = data.map(line => {
+    line += delim;
+  });
+  return delimAddArr;
+};
 
 module.exports = {
-    checkCSVData,
-    writeDataToCSV,
-    addDelim
+  checkCSVData,
+  writeDataToCSV,
+  addDelim
 };
