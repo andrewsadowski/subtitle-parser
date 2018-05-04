@@ -15,7 +15,7 @@ const checkCSVData = function(data) {};
 const addDelim = function(data) {
   let delim = '\t';
   let delimAddArr = data.map(line => {
-    line += delim;
+    line += delim + '\n';
   });
   return delimAddArr;
 };
