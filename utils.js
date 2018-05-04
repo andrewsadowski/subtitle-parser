@@ -13,7 +13,7 @@ const writeDataToCSV = function(data, delimiter) {
 const checkCSVData = function(data) {};
 
 const addDelim = function(data) {
-  let delim = '\t';
+  const delim = '\t';
   let delimAddArr = data.map(line => {
     line += delim + '\n';
   });
