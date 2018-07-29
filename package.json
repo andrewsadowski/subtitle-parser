@@ -6,7 +6,8 @@
   "scripts": {
     "test-watch": "nodemon --exec 'npm test'",
     "test": "mocha subParser.test.js",
-    "start": "node subParser.js"
+    "start": "node subParser.js",
+    "dir": "node subParserDir.js"
   },
   "author": "",
   "license": "ISC",
