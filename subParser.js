@@ -1,7 +1,7 @@
-const fs = require("fs");
-const parser = require("subtitles-parser");
+const fs = require('fs');
+const parser = require('subtitles-parser');
 
-let srt = fs.readFileSync("test.srt", "utf8");
+let srt = fs.readFileSync('test.srt', 'utf8');
 
 //Stores contents of subtitle file to array//
 let data = parser.fromSrt(srt);
@@ -15,15 +15,18 @@ const generateSubCSV = () => {
       data[i].endTime
     }; ;${data[i].text}\n`;
 
-    let dline = output.replace(/([^0-9])\n([^$\n]*)([^\n])/, "\1 \2\3");
+    let dline = output.replace(
+      /([^0-9])\n([^$\n]*)([^\n])/,
+      '\1 \2\3'
+    );
     dline = output.replace(
       /(^\n([0-9]*)\n([^a-z$]*)\n([^$]*)\n)/,
-      "\n\1\t\2\t\3"
+      '\n\1\t\2\t\3'
     );
 
     // console.log(dline);
 
-    fs.appendFile("./outputCSV.csv", dline, err => {
+    fs.appendFile('./outputCSV.csv', dline, err => {
       if (err) {
         return console.log(err);
       }
@@ -37,7 +40,7 @@ const generateSub2TSV = () => {
       sub.text
     }\n`;
     console.log(output);
-    fs.appendFile("./outputTSV.tsv", output, err => {
+    fs.appendFile('./outputTSV.tsv', output, err => {
       if (err) return;
     });
   });
