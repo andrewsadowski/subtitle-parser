@@ -16,8 +16,6 @@ npm install
 
 ### Running Application
 
-![alt text](https://postimg.cc/image/g68xbebkr/)
-
 ## Running tests
 
 Tests can be run by executing the following:

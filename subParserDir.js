@@ -1,8 +1,21 @@
 const fs = require('fs');
 const parser = require('subtitles-parser');
+const argv = require('yargs')
+  .alias('f', 'filePath')
+  .usage('Usage: add a file with the -f flag')
+  .example('node subParser.js -f "fileName.ext"')
+  .alias('d', 'directory')
+  .usage('Usage: add a directory with the -d flag')
+  .help('h').argv;
 
-const dirPath = 'srtTest/';
+let dirPath;
 const outputPath = 'output/';
+
+if (argv.d) {
+  dirPath = argv.d;
+} else {
+  dirPath = 'srt/';
+}
 
 //Directory Reader
 const directoryReader = () => {

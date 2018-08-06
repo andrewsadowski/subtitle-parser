@@ -1,7 +1,20 @@
 const fs = require('fs');
 const parser = require('subtitles-parser');
+const argv = require('yargs')
+  .alias('f', 'filePath')
+  .usage('Usage: add a file with the -f flag')
+  .example('node subParser.js -f "fileName.ext"')
+  .help('h').argv;
 
-let srt = fs.readFileSync('test.srt', 'utf8');
+let filePath;
+
+if (argv.f) {
+  filePath = argv.f;
+} else {
+  filePath = 'test.srt';
+}
+
+let srt = fs.readFileSync(filePath, 'utf8');
 
 //Stores contents of subtitle file to array//
 let data = parser.fromSrt(srt);
@@ -40,7 +53,7 @@ const generateSub2TSV = () => {
       sub.text
     }\n`;
     console.log(output);
-    fs.appendFile('./outputTSV.tsv', output, err => {
+    fs.appendFile('./srt/outputTSV.tsv', output, err => {
       if (err) return;
     });
   });
