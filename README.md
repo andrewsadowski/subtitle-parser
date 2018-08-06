@@ -16,6 +16,18 @@ npm install
 
 ### Running Application
 
+CD into directory of application and type:
+
+```
+node subParser.js -f 'srtYouNeedParsed.ext'
+```
+
+OR if it's a directory, type:
+
+```
+node subParserDir.js -d 'directoryOfSrts/'
+```
+
 ## Running tests
 
 Tests can be run by executing the following:
