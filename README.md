@@ -1,6 +1,6 @@
 # Subtitle-Parser
 
-This node CLI parses an .srt file into an object, and then offers that data up in either CSV or TSV format.
+This node CLI parses an .srt file into an object, and then offers that data up in either CSV or TSV format.  This is particularly useful if you need to create VO/Bilingual scripts.
 
 ### Prerequisites
 
